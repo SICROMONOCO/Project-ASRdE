@@ -192,25 +192,27 @@ meterpreter > hashdump
 Les démonstrations en direct dans un cadre universitaire pouvant être sujettes à des aléas techniques, nous avons enregistré l'exécution complète des scénarios d'audit au sein de notre laboratoire isolé. Vous pouvez visionner les extraits directement ci-dessous :
 
 ### 🎬 Vidéo 1 : Base de référence et Connectivité
-<video src="%5BVIDEOS%5D%20LAB/LAB%20VIDEO%201%20-%20IP%20ET%20TEST%20PING.mp4" width="100%" controls>
-  Votre navigateur ne supporte pas la balise vidéo. Nous vous invitons à consulter le fichier directement : [LAB VIDEO 1](%5BVIDEOS%5D%20LAB/LAB%20VIDEO%201%20-%20IP%20ET%20TEST%20PING.mp4)
-</video>
+
+https://github.com/user-attachments/assets/df81ccd3-c226-4fd4-b272-78ff7b21976d
+
 *Démontre la stabilité de l'environnement virtualisé et le routage correct via pfSense.*
 
 ---
 
 ### 🎬 Vidéo 2 : Scénario 1 - Reconnaissance & Cartographie
-<video src="%5BVIDEOS%5D%20LAB/LAB%20VIDEO%202%20-%20SENARIO%201.mp4" width="100%" controls>
-  Votre navigateur ne supporte pas la balise vidéo. Nous vous invitons à consulter le fichier directement : [LAB VIDEO 2](%5BVIDEOS%5D%20LAB/LAB%20VIDEO%202%20-%20SENARIO%201.mp4)
-</video>
+
+
+https://github.com/user-attachments/assets/9bd60558-03d6-49da-bbd9-9eadcebb4861
+
+
 *Présente la cartographie furtive avec Nmap et l'évaluation automatisée des vulnérabilités avec Nessus.*
 
 ---
 
 ### 🎬 Vidéo 3 : Scénario 2 - Exploitation & Cassage de Mot de Passe
-<video src="%5BVIDEOS%5D%20LAB/LAB%20VIDEO%203%20-%20SENARIO%202%20METASPLOITE%20+%20JRT.mp4" width="100%" controls>
-  Votre navigateur ne supporte pas la balise vidéo. Nous vous invitons à consulter le fichier directement : [LAB VIDEO 3](%5BVIDEOS%5D%20LAB/LAB%20VIDEO%203%20-%20SENARIO%202%20METASPLOITE%20+%20JRT.mp4)
-</video>
+
+https://github.com/user-attachments/assets/8d842cca-cfbd-46e6-9690-9615c52b8856
+
 *Mise en évidence de la compromission de l'Active Directory via SMB (Metasploit), de l'extraction de la base SAM et du cassage cryptographique hors ligne des identifiants de l'Administrateur à l'aide de John the Ripper.*
 
 <p align="right">(<a href="#readme-top">Retour en haut</a>)</p>
@@ -251,7 +253,7 @@ Nous avons documenté chaque étape critique de l'audit. Cliquez sur les images 
 | Exploitation SMB | Reconnaissance & Scan | Post-Exploitation (Hashes) |
 | :---: | :---: | :---: |
 | <img src="Preuves/Preuve_01.png" width="300"> | <img src="Preuves/Preuve_02.png" width="300"> | <img src="Preuves/Preuve_03.png" width="300"> |
-| *Brute Force SMB (Metasploit)* | *Analyse Nmap & Nessus* | *Extraction & Cassage SAM* |
+| *Brute Force SMB (Metasploit)* | *Déploiement Psexec* | *Extraction & Cassage SAM* |
 
 <p align="right">(<a href="#readme-top">Retour en haut</a>)</p>
 
