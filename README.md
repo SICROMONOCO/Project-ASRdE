@@ -10,11 +10,11 @@
     <a href="#-démonstration"><strong>Voir les démonstrations »</strong></a>
     <br />
     <br />
-    <a href="ASRdE%20Audit%20Report.pdf">Rapport d'Audit</a>
+    <a href="Rapport_Audit_Technique_ASRdE.pdf">Rapport d'Audit</a>
     ·
-    <a href="Output_Logs.md">Consulter les Logs</a>
+    <a href="Logs_Execution.md">Consulter les Logs</a>
     ·
-    <a href="Audit%20commands.md">Voir les Commandes</a>
+    <a href="Commandes_Audit.md">Voir les Commandes</a>
   </p>
 
   <!-- Badges -->
@@ -112,19 +112,21 @@ Ce projet s'appuie sur des outils standards de l'industrie de la cybersécurité
 ```text
 ASRdE-Project/
 ├── icon.png                                           # Icône/Logo principal du projet
-├── Lab Strcture.png                                   # Diagramme de la topologie réseau
-├── ASRdE Audit Report.pdf                             # Rapport d'Audit final compilé
-├── ASRdE Audit Report Template.md                     # Modèle Markdown pour le rapport d'audit
-├── Audit commands.md                                  # Liste exhaustive des commandes exécutées
-├── Output_Logs.md                                     # Journaux du terminal et résultats des scénarios
-├── [VIDEOS] LAB/                                      # Démonstrations vidéo enregistrées
-│   ├── LAB VIDEO 1 - IP ET TEST PING.mp4              # Test de connectivité réseau et base de référence
-│   ├── LAB VIDEO 2 - SENARIO 1.mp4                    # Reconnaissance (Nmap) & Cartographie (Nessus)
-│   └── LAB VIDEO 3 - SENARIO 2 METASPLOITE + JRT.mp4  # Exploitation & Cassage (Metasploit + JtR)
-├── [Presentation] Partie II.pptx                      # Diapositives de présentation finale (Lab & Durcissement)
-├── [Presentation] Educational overview.pdf            # Présentation initiale du contexte éducatif
-├── [PLAN V3] Projet Audit de Sécurité... .md          # Plan final validé du projet
-└── [PLAN V3] Compétences de l'Auditeur IT... .pdf     # Documentation sur les standards de l'auditeur IT
+├── Architecture_Reseau.png                            # Diagramme de la topologie réseau
+├── Rapport_Projet_Complet_ASRdE.pdf                   # Rapport de projet global et exhaustif
+├── Rapport_Audit_Technique_ASRdE.pdf                  # Rapport d'Audit technique du laboratoire
+├── Template_Rapport_Audit.md                          # Modèle Markdown pour le rapport d'audit
+├── Commandes_Audit.md                                 # Liste exhaustive des commandes exécutées
+├── Logs_Execution.md                                  # Journaux du terminal et résultats des scénarios
+├── Preuves/                                           # Captures d'écran des preuves d'exploitation
+├── Demos_Videos/                                      # Démonstrations vidéo enregistrées
+│   ├── Demo_V1_Connectivite_Ping.mp4                  # Test de connectivité réseau et base de référence
+│   ├── Demo_V2_Reconnaissance_Nmap.mp4                # Reconnaissance (Nmap) & Cartographie (Nessus)
+│   ├── Demo_V3_Exploitation_Metasploit.mp4            # Exploitation & Cassage (Metasploit + JtR)
+│   └── Demo_V4_Analyse_Trafic_Wireshark.mp4           # Analyse du trafic non chiffré (Wireshark)
+├── Plan_Projet_Audit_V3.md                            # Plan validé du projet (V3)
+├── Plan_Projet_Audit_V4.md                            # Nouvelle version du plan (V4)
+└── Recherche_Normes_Audit_V2.pdf                      # Documentation sur les standards de l'auditeur IT
 ```
 
 <p align="right">(<a href="#readme-top">Retour en haut</a>)</p>
@@ -162,8 +164,8 @@ Suivez ces instructions pour reproduire l'environnement d'audit à des fins édu
 
 Le projet est piloté par des séquences de commandes spécifiques conçues pour reproduire la chaîne d'attaque (kill chain) d'un pirate.
 
-* Pour la liste complète des commandes utilisées, consultez [Audit commands.md](Audit%20commands.md).
-* Pour voir les résultats exacts de ces commandes, examinez [Output_Logs.md](Output_Logs.md).
+* Pour la liste complète des commandes utilisées, consultez [Commandes_Audit.md](Commandes_Audit.md).
+* Pour voir les résultats exacts de ces commandes, examinez [Logs_Execution.md](Logs_Execution.md).
 
 **Exemple d'Exécution : Extraction du Hash SAM Local (Post-Exploitation)**
 
@@ -215,6 +217,14 @@ https://github.com/user-attachments/assets/8d842cca-cfbd-46e6-9690-9615c52b8856
 
 *Mise en évidence de la compromission de l'Active Directory via SMB (Metasploit), de l'extraction de la base SAM et du cassage cryptographique hors ligne des identifiants de l'Administrateur à l'aide de John the Ripper.*
 
+---
+
+### 🎬 Vidéo 4 : Scénario 4 - Analyse du Trafic Réseau (Forensique)
+
+https://github.com/user-attachments/assets/c318bd97-71df-4477-8aec-816f95e5c4b9
+
+*Mise en évidence de la vulnérabilité des protocoles non chiffrés (FTP) grâce à l'analyse forensique des paquets avec Wireshark. L'interception d'une session démontre l'exposition en clair des identifiants (`USER` / `PASS`), justifiant la nécessité de migrer vers des protocoles sécurisés comme le SFTP pour prévenir les attaques de type Man-in-the-Middle (MitM).*
+
 <p align="right">(<a href="#readme-top">Retour en haut</a>)</p>
 
 ---
@@ -223,9 +233,13 @@ https://github.com/user-attachments/assets/8d842cca-cfbd-46e6-9690-9615c52b8856
 
 ## 📊 Résultats / Livrables
 
-L'aboutissement de cette exécution technique est le Rapport d'Audit Officiel ASRdE, formaté selon les normes de l'industrie.
+L'aboutissement de ce projet se décline en deux documents majeurs : un rapport d'audit technique ciblé sur le laboratoire, ainsi qu'un rapport complet exhaustif documentant l'ensemble du projet du début à la fin.
 
-📄 **[Lire le Rapport d'Audit Complet (PDF)](ASRdE%20Audit%20Report.pdf)**
+📄 **[Lire le Rapport d'Audit du Lab (PDF)](Rapport_Audit_Technique_ASRdE.pdf)**
+*Rapport d'audit technique formel centré exclusivement sur les résultats et tests d'intrusion de l'environnement virtualisé.*
+
+📄 **[Lire le Rapport Complet du Projet - Version Finale (PDF)](Rapport_Projet_Complet_ASRdE.pdf)**
+*Document global contenant la totalité des informations compilées sur le projet (méthodologie, contexte, audit, recommandations et annexes).*
 
 ### Résumé des Conclusions Clés :
 
@@ -243,7 +257,7 @@ L'aboutissement de cette exécution technique est le Rapport d'Audit Officiel AS
 
 ### 🏗️ Architecture & Topologie
 <div align="center">
-  <img src="Lab%20Strcture.png" alt="Architecture du Lab" width="800">
+  <img src="Architecture_Reseau.png" alt="Architecture du Lab" width="800">
   <p><i>Schéma détaillé de l'infrastructure réseau simulée (pfSense, Active Directory, Kali Linux).</i></p>
 </div>
 
@@ -269,6 +283,7 @@ Notre méthodologie suit un cadre strict de test de pénétration professionnel 
 2. **Cartographie (Nessus) :** Analyse approfondie des services découverts par rapport aux bases de données CVE connues pour évaluer la criticité des risques.
 3. **Exploitation (Metasploit) :** Déploiement de charges utiles (ex: reverse shells psexec) pour prouver que les vulnérabilités sont activement exploitables.
 4. **Audit Interne (John the Ripper) :** Récupération de hachages de mots de passe sur les systèmes compromis, suivie d'attaques par dictionnaire/force brute pour mettre en évidence les failles humaines et politiques.
+5. **Analyse du Trafic (Wireshark) :** Écoute du réseau en mode promiscuous pour intercepter des paquets FTP non chiffrés, démontrant l'exposition en clair des identifiants et alertant sur le risque d'attaques Man-in-the-Middle (MitM).
 
 <p align="right">(<a href="#readme-top">Retour en haut</a>)</p>
 
