@@ -1,0 +1,59 @@
+QUESTION GÉNÉRALE – PROJET (Synthèse personnelle)
+
+1) Description générale du projet
+- Intitulé : ASRdE – Audit de Sécurité Réseau d’une Entreprise.
+- Contexte : projet académique du module Cybersécurité S4 (environnement de laboratoire virtualisé).
+- Objectif principal : évaluer la sécurité d’un réseau d’entreprise simulé, identifier les failles critiques et proposer des actions de remédiation.
+
+2) Intérêt et justification du projet
+- Intérêt pédagogique : appliquer une méthodologie d’audit de bout en bout.
+- Intérêt technique : manipuler des outils professionnels de cybersécurité.
+- Problématique : comment protéger les actifs critiques (AD, serveurs, comptes, données) sans bloquer l’activité métier.
+
+3) Solution proposée
+- Architecture globale : lab isolé avec pfSense + Windows Server (AD) + Ubuntu FTP + poste employé + Kali Linux.
+- Choix techniques : Nmap (reconnaissance), Nessus (scan vulnérabilités), Metasploit (validation d’exploitabilité), John the Ripper (test robustesse mots de passe), Wireshark (analyse trafic clair).
+
+4) Travail réalisé par l’étudiant
+- Conception : cadrage du périmètre, analyse des besoins, schéma de topologie réseau.
+- Réalisation : déploiement des VMs, configuration des cibles, exécution des phases d’audit (reconnaissance, scan, exploitation, post-exploitation), collecte des preuves et rédaction des livrables.
+- Tests/validation : vérification de la connectivité, confirmation des vulnérabilités par scénarios pratiques, priorisation des risques.
+
+5) Outils utilisés
+- Matériels/infra : machines virtuelles sur VMware/VirtualBox.
+- Logiciels/systèmes : Kali Linux, pfSense, Windows Server Core, Windows 10, Ubuntu Server.
+- Outils sécurité : Nmap, Nessus, Metasploit, John the Ripper, enum4linux, Wireshark.
+
+6) Compétences acquises
+- Techniques : audit réseau, scan de vulnérabilités, exploitation contrôlée, analyse de logs/preuves.
+- Méthodologiques : structuration d’un audit, classement des risques (CVSS), rédaction de recommandations.
+- Organisationnelles : travail en équipe, documentation claire, restitution professionnelle.
+
+7) Durée d’exécution du projet
+- Temps global : projet mené sur le semestre S4 (année 2026).
+- Répartition approximative : conception ~30%, réalisation ~50%, tests/validation et synthèse ~20%.
+
+8) Limites et contraintes rencontrées
+- Environnement limité à un laboratoire virtualisé (ne couvre pas toute la complexité d’un SI réel).
+- Contraintes ressources/temps (dépendance RAM/CPU et disponibilité des VMs).
+- Difficultés techniques ponctuelles en démonstration, résolues par vérifications progressives et logs d’exécution.
+
+9) Perspectives et améliorations possibles
+- Renforcer la segmentation réseau (VLAN).
+- Durcir la gestion des identités (GPO strictes, LAPS, MFA).
+- Remplacer les services non chiffrés (FTP) par des alternatives sécurisées (SFTP/SSH).
+- Étendre l’audit à des scénarios plus proches d’un contexte entreprise réel.
+
+Commandes principales exécutées (résumé)
+- ping -c 2 192.168.1.10
+- ping -c 2 192.168.1.20
+- sudo nmap -sV -O -p 21,445,3389 192.168.1.0/24
+- enum4linux -U 192.168.1.10
+- sudo systemctl start nessusd
+- msfconsole -q
+- use auxiliary/scanner/smb/smb_login
+- use exploit/windows/smb/psexec
+- getsystem
+- hashdump
+- john --format=NT --wordlist=/usr/share/wordlists/Reduced_Wordlist.txt local_hashes.txt
+- john --show Extracted_hash
